@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Soon</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .typewriter {
+      color: white;
+      font-size: 48px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      height: 60px;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .typewriter {
+      animation: blink 0.7s step-end infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="images/73191bde-898a-4387-9af1-b64b086de083.png" alt="Image">
+  <div class="typewriter" id="typewriter"></div>
+
+  <script>
+    const text = "Soon";
+    const speed = 600; // سرعة الكتابة (مللي ثانية)
+    let i = 0;
+    const element = document.getElementById("typewriter");
+
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        setTimeout(() => {
+          element.textContent = "";
+          i = 0;
+          type();
+        }, 1500); // يعيد الكتابة بعد توقف بسيط
+      }
+    }
+
+    type();
+  </script>
+
+
+
+</body></html>
